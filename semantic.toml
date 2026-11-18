@@ -195,6 +195,214 @@ grain = "one row per OwnershipTransferred(address,address) event"
 newOwner = "The `newOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
 previousOwner = "The `previousOwner` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
 
+[table.fee_os_on_open_source_fee]
+description = "Result of the `fee_os_on_open_source_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_os_on_open_source_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_os_on_open_source_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_os_on_open_source_update_fee]
+description = "Result of the `fee_os_on_open_source_update_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_os_on_open_source_update_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_os_on_open_source_update_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_os_on_proprietary_fee]
+description = "Result of the `fee_os_on_proprietary_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_os_on_proprietary_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_os_on_proprietary_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_os_on_proprietary_update_fee]
+description = "Result of the `fee_os_on_proprietary_update_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_os_on_proprietary_update_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_os_on_proprietary_update_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_osu_on_open_source_fee]
+description = "Result of the `fee_osu_on_open_source_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_osu_on_open_source_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_osu_on_open_source_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_osu_on_open_source_update_fee]
+description = "Result of the `fee_osu_on_open_source_update_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_osu_on_open_source_update_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_osu_on_open_source_update_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_osu_on_proprietary_fee]
+description = "Result of the `fee_osu_on_proprietary_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_osu_on_proprietary_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_osu_on_proprietary_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_osu_on_proprietary_update_fee]
+description = "Result of the `fee_osu_on_proprietary_update_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_osu_on_proprietary_update_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_osu_on_proprietary_update_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_pr_on_open_source_fee]
+description = "Result of the `fee_pr_on_open_source_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_pr_on_open_source_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_pr_on_open_source_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_pr_on_open_source_update_fee]
+description = "Result of the `fee_pr_on_open_source_update_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_pr_on_open_source_update_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_pr_on_open_source_update_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_pr_on_proprietary_fee]
+description = "Result of the `fee_pr_on_proprietary_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_pr_on_proprietary_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_pr_on_proprietary_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_pr_on_proprietary_update_fee]
+description = "Result of the `fee_pr_on_proprietary_update_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_pr_on_proprietary_update_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_pr_on_proprietary_update_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_pru_on_open_source_fee]
+description = "Result of the `fee_pru_on_open_source_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_pru_on_open_source_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_pru_on_open_source_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_pru_on_open_source_update_fee]
+description = "Result of the `fee_pru_on_open_source_update_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_pru_on_open_source_update_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_pru_on_open_source_update_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_pru_on_proprietary_fee]
+description = "Result of the `fee_pru_on_proprietary_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_pru_on_proprietary_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_pru_on_proprietary_fee.footguns]
+bools = ["reverted"]
+
+[table.fee_pru_on_proprietary_update_fee]
+description = "Result of the `fee_pru_on_proprietary_update_fee` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.fee_pru_on_proprietary_update_fee.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.fee_pru_on_proprietary_update_fee.footguns]
+bools = ["reverted"]
+
 [table.fee_router__din_split_updated]
 description = "`DinSplitUpdated((uint16,uint16,uint16,uint16,uint16))` events emitted by the `fee_router` contract. (seeded from the ABI - edit semantic.toml to improve this)"
 grain = "one row per DinSplitUpdated((uint16,uint16,uint16,uint16,uint16)) event"
@@ -311,6 +519,19 @@ grain = "one row per TreasuryUpdated(address) event"
 [table.fee_router__treasury_updated.columns]
 treasury = "The `treasury` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
 
+[table.manifest_request_record]
+description = "Result of the `manifest_request_record` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.manifest_request_record.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.manifest_request_record.footguns]
+bools = ["reverted"]
+
 [table.model_record]
 description = "Result of the `model_record` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
 grain = "one row per sampled block this declaration fires at"
@@ -322,6 +543,19 @@ result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.tom
 reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
 
 [table.model_record.footguns]
+bools = ["reverted"]
+
+[table.model_request_record]
+description = "Result of the `model_request_record` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.model_request_record.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.model_request_record.footguns]
 bools = ["reverted"]
 
 [table.registry__fee_router_updated]
@@ -535,6 +769,19 @@ newFee = "The `newFee` uint256 parameter. (seeded from the ABI - edit semantic.t
 [table.registry__proprietary_update_fee_updated.footguns]
 big_ints = ["newFee"]
 overflows_dec = ["newFee"]
+
+[table.registry_fee_router_record]
+description = "Result of the `registry_fee_router_record` call (selector `0x`). (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per sampled block this declaration fires at"
+
+[table.registry_fee_router_record.columns]
+calldata = "The `calldata` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+content_address = "The `content_address` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+result = "The `result` bytes parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+reverted = "The `reverted` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `reverted = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `reverted = 'true'` or `CAST(reverted AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.registry_fee_router_record.footguns]
+bools = ["reverted"]
 
 [table.stake__active_registration_decremented]
 description = "`ActiveRegistrationDecremented(address)` events emitted by the `stake` contract. (seeded from the ABI - edit semantic.toml to improve this)"
