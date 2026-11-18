@@ -45,6 +45,36 @@ CREATE VIEW validators AS
            max(CASE WHEN grp = 'blacklist' THEN flag ELSE 0 END) AS blacklisted,
            max(CASE WHEN grp = 'jail' THEN flag ELSE 0 END) AS jailed
     FROM flags WHERE rn = 1 GROUP BY validator
+  ),
+  withdrawn AS (
+    SELECT validator, sum(CAST(amount AS DECIMAL(38, 0))) AS total_withdrawn FROM stake__validator_withdrawal_claimed GROUP BY validator
+  ),
+  -- the subgraph adds one per increment and takes one per decrement but never below zero, so the
+  -- count is the final sum less its lowest negative point, as with active stake above
+  regs AS (
+    SELECT validator, sum(d) - least(0, min(raw)) AS active_registrations
+    FROM (
+      SELECT validator, d, sum(d) OVER (PARTITION BY validator ORDER BY block_number, log_index) AS raw
+      FROM (
+        SELECT validator, block_number, log_index, 1 AS d FROM stake__active_registration_incremented
+        UNION ALL SELECT validator, block_number, log_index, -1 FROM stake__active_registration_decremented
+      ) m
+    ) x GROUP BY validator
+  ),
+  enc AS (
+    SELECT validator, pubkey FROM (
+      SELECT validator, pubkey, ROW_NUMBER() OVER (PARTITION BY validator ORDER BY block_number DESC, log_index DESC) AS rn
+      FROM stake__encryption_key_registered
+    ) k WHERE rn = 1
+  ),
+  jail AS (
+    SELECT validator, CASE WHEN until IS NOT NULL THEN CAST(until AS BIGINT) END AS jailed_until FROM (
+      SELECT validator, until, ROW_NUMBER() OVER (PARTITION BY validator ORDER BY block_number DESC, log_index DESC) AS rn
+      FROM (
+        SELECT validator, "jailedUntil" AS until, block_number, log_index FROM stake__validator_jailed
+        UNION ALL SELECT validator, CAST(NULL AS VARCHAR), block_number, log_index FROM stake__validator_reactivated
+      ) j
+    ) k WHERE rn = 1
   )
   SELECT r.validator,
          sum(r.staked) AS total_staked,
@@ -52,8 +82,17 @@ CREATE VIEW validators AS
          sum(r.unstaked) AS total_unstake_requested,
          sum(r.staked - r.slashed - r.unstaked) - least(0, min(r.raw)) AS active_stake,
          coalesce(max(l.blacklisted), 0) = 1 AS blacklisted,
-         coalesce(max(l.jailed), 0) = 1 AS jailed
-  FROM running r LEFT JOIN latest l ON l.validator = r.validator
+         coalesce(max(l.jailed), 0) = 1 AS jailed,
+         max(jail.jailed_until) AS jailed_until,
+         coalesce(max(withdrawn.total_withdrawn), CAST(0 AS DECIMAL(38, 0))) AS total_withdrawn,
+         coalesce(max(regs.active_registrations), 0) AS active_registrations,
+         max(enc.pubkey) AS encryption_key
+  FROM running r
+  LEFT JOIN latest l ON l.validator = r.validator
+  LEFT JOIN jail ON jail.validator = r.validator
+  LEFT JOIN withdrawn ON withdrawn.validator = r.validator
+  LEFT JOIN regs ON regs.validator = r.validator
+  LEFT JOIN enc ON enc.validator = r.validator
   GROUP BY r.validator;
 
 -- Each global iteration per task coordinator, its current state and when it started.

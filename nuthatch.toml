@@ -69,3 +69,124 @@ on = "registry__model_approved"
 contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
 signature = "getModel(uint256)"
 args = ["{modelId}"]
+
+# The other registry reads the subgraph's handlers make, each pinned to the block of the event that
+# triggers it. The views in views/40-din-reads.sql slice the answers.
+[[calls]]
+name = "model_request_record"
+on = "registry__model_registration_requested"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "modelRequests(uint256)"
+args = ["{requestId}"]
+
+[[calls]]
+name = "manifest_request_record"
+on = "registry__manifest_update_requested"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "manifestRequests(uint256)"
+args = ["{requestId}"]
+
+[[calls]]
+name = "registry_fee_router_record"
+on = "registry__fees_swept_to_router"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "feeRouter()"
+
+# The four fee getters. Each of the four single-fee setters makes the subgraph read the whole
+# schedule, so each getter is declared once per setter event: 16 small tables, fee_<getter>_<event>.
+
+[[calls]]
+name = "fee_os_on_open_source_fee"
+on = "registry__open_source_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "openSourceFee()"
+
+[[calls]]
+name = "fee_pr_on_open_source_fee"
+on = "registry__open_source_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "proprietaryFee()"
+
+[[calls]]
+name = "fee_osu_on_open_source_fee"
+on = "registry__open_source_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "openSourceUpdateFee()"
+
+[[calls]]
+name = "fee_pru_on_open_source_fee"
+on = "registry__open_source_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "proprietaryUpdateFee()"
+
+[[calls]]
+name = "fee_os_on_proprietary_fee"
+on = "registry__proprietary_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "openSourceFee()"
+
+[[calls]]
+name = "fee_pr_on_proprietary_fee"
+on = "registry__proprietary_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "proprietaryFee()"
+
+[[calls]]
+name = "fee_osu_on_proprietary_fee"
+on = "registry__proprietary_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "openSourceUpdateFee()"
+
+[[calls]]
+name = "fee_pru_on_proprietary_fee"
+on = "registry__proprietary_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "proprietaryUpdateFee()"
+
+[[calls]]
+name = "fee_os_on_open_source_update_fee"
+on = "registry__open_source_update_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "openSourceFee()"
+
+[[calls]]
+name = "fee_pr_on_open_source_update_fee"
+on = "registry__open_source_update_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "proprietaryFee()"
+
+[[calls]]
+name = "fee_osu_on_open_source_update_fee"
+on = "registry__open_source_update_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "openSourceUpdateFee()"
+
+[[calls]]
+name = "fee_pru_on_open_source_update_fee"
+on = "registry__open_source_update_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "proprietaryUpdateFee()"
+
+[[calls]]
+name = "fee_os_on_proprietary_update_fee"
+on = "registry__proprietary_update_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "openSourceFee()"
+
+[[calls]]
+name = "fee_pr_on_proprietary_update_fee"
+on = "registry__proprietary_update_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "proprietaryFee()"
+
+[[calls]]
+name = "fee_osu_on_proprietary_update_fee"
+on = "registry__proprietary_update_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "openSourceUpdateFee()"
+
+[[calls]]
+name = "fee_pru_on_proprietary_update_fee"
+on = "registry__proprietary_update_fee_updated"
+contract = "0x959922bE3CAee4b8Cd9a407cc3ac1C251C2007B1"
+signature = "proprietaryUpdateFee()"

@@ -148,6 +148,25 @@ A self-hosted blockchain index. Query it locally; there is no third-party API.
 - `treasury__initialized` - Initialized(uint64) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, version)
 - `treasury__ownership_transferred` - OwnershipTransferred(address,address) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, previousOwner, newOwner)
 - `model_record` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `model_request_record` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `manifest_request_record` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `registry_fee_router_record` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_os_on_open_source_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_pr_on_open_source_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_osu_on_open_source_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_pru_on_open_source_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_os_on_proprietary_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_pr_on_proprietary_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_osu_on_proprietary_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_pru_on_proprietary_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_os_on_open_source_update_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_pr_on_open_source_update_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_osu_on_open_source_update_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_pru_on_open_source_update_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_os_on_proprietary_update_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_pr_on_proprietary_update_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_osu_on_proprietary_update_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
+- `fee_pru_on_proprietary_update_fee` - calls to  (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, calldata, result, reverted, content_address)
 
 ## SQL types
 - `uint`/`int` columns wider than 64 bits are exact decimal text: never `SUM` the raw column.
@@ -172,5 +191,5 @@ A self-hosted blockchain index. Query it locally; there is no third-party API.
 - `GET /diff?from=X&to=Y`    what happened in a range (`block=N`, or `tx=0x..&block=N`), as JSON, `format=text` or `markdown`
 
 ## MCP (for coding agents)
-Run `nuthatch mcp` (stdio) to expose tools: status, schema, tables, table, sql, explain, entity, diff, balance, top_balances.
+Run `nuthatch mcp` (stdio) to expose tools: status, schema, tables, table, sql, at, explain, entity, diff, balance, top_balances.
 Fully offline against the local instance; nothing phones home.
